@@ -16,8 +16,16 @@ public class CodeWars {
                 .map(arr -> arr.split(""));
 
 
-       //int[] points = subGames.filter(arr -> s.matches("[0-9]"));
-        System.out.println(subGames);
+       int sum = subGames.mapToInt(arr -> {
+           int scores = 1;
+           if(arr[0].compareTo(arr[2]) > 0) {
+               scores = 3;
+           } else if (arr[0].compareTo(arr[2]) < 0) {
+               scores = 0;
+           }
+           return scores;
+       }).sum();
+        System.out.println(sum);
         return 0;
     }
 }
