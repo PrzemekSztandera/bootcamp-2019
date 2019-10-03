@@ -6,6 +6,7 @@ public class ShoppingList {
 
     private ArrayList<String> list;
 
+
     public ShoppingList() {
         list = new ArrayList<>();
     }
