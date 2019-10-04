@@ -9,6 +9,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
@@ -36,5 +37,7 @@ public class CustomerTest {
         given(item1.getPrice("Word")).willReturn(500);
         // when
         int amount = c1.calculateBill();
+
+        assertEquals(500, amount);
     }
 }
