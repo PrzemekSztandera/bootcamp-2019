@@ -14,10 +14,9 @@ public class RegConverter {
         map.put("B", "8");
         map.put("I", "1");
 
-        if (!(input.length() >= 5 && input.length() <= 7)) {
-            throw new NullPointerException("The size of the input is invalid");
-        } else if (!(input.matches("[a-zA-Z0-9]*"))) {
-            throw new NullPointerException("Input contains invalid characters");
+
+        if (!(input.matches("[a-zA-Z0-9]{5,7}"))) {
+            throw new NullPointerException("Invalid input");
         }
 
         for (int i = 0; i < input.length(); i++) {
@@ -34,6 +33,6 @@ public class RegConverter {
         RegConverter regConverter = new RegConverter();
 
         System.out.println(regConverter.convert("FSDG32"));
-        //System.out.println(regConverter.convert("FS%%32"));
+        //System.out.println(regConverter.convert("FS32"));
     }
 }
